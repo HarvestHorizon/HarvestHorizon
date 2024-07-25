@@ -1,0 +1,78 @@
+body{
+    background-color:lightgreen;
+}
+img{
+    object-fit:cover;
+    width: 2200px;
+    height: 5000px;
+    transform: rotate(270deg);
+}
+.bg{
+    height: 680px;
+    width: 1500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sign_up{
+    background-color: rgba(255, 255, 255, 0.53);
+    width: 540px;
+    height: 480px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    gap: 20px;
+}
+.email_div{
+    width: 500px;
+    height: 120px;
+    border-radius: 20px;
+    
+}
+.email_text{
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    
+}
+.enter_div, input{
+    font-family: "Montserrat", sans-serif;
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    border-color: transparent;
+    font-size: 18px;
+}
+.enter_div, input:active{
+    border: none;
+}
+a{
+    text-decoration: underline;
+    color:darkcyan;
+    cursor: pointer;
+}
+.lbutton{
+    font-family: "Montserrat", sans-serif;
+    height: 60px;
+    width: 100px;
+    border: none;
+    border-radius: 15px;
+    background-color: lightgreen;
+    cursor: pointer;
+    font-size: 20px;
+    margin-bottom: -15px;
+
+}
+
+
+
+
+
+
+
+
+
