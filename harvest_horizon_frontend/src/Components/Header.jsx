@@ -12,14 +12,14 @@ const Header = () => {
             </div>
            <nav>
             <div class="naving">
-                <a href="">Home</a>
+                <a href="/">Home</a>
                 <a href="/about">About</a>
                 <a href="">Store</a>
-                <a href="">Contact</a>
+                <a href="/contact">Contact</a>
                
             </div>
             <div class="but1">
-                <a href="">login</a>
+                <a href="/login">login</a>
                
             </div>
            

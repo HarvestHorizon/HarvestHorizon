@@ -1,0 +1,52 @@
+.contact-container {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #2b3d33;
+    padding: 20px;
+  }
+  
+  /* .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4a5c51;
+    padding: 10px;
+  } */
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .shop-button {
+    background-color: #fff;
+    color: #4a5c51;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .contact-section {
+    margin-top: 20px;
+  }
+  
+  .contact-links {
+    margin-top: 10px;
+  }
+  
+  .contact-link {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+  }
+  
+  .contact-link i {
+    margin-right: 10px;
+  }
+  
