@@ -1,78 +1,81 @@
-body{
-    background-color:lightgreen;
-}
-img{
-    object-fit:cover;
-    width:200px;
-    height: 400px;
-    transform: rotate(270deg);
-}
-.bg{
-    height: 680px;
-    width: 1500px;
+.loginbody {
+    height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #D4E9E2;
 }
-.sign_up{
-    background-color: rgba(255, 255, 255, 0.53);
-    width: 540px;
-    height: 480px;
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: absolute;
-    gap: 20px;
-}
-.email_div{
-    width: 500px;
-    height: 120px;
+
+
+.loginbg {
+    background-color: rgba(255, 255, 255, 0.479);
     border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 370px;
+    height: 300px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     
 }
-.email_text{
+
+/* Style the input fields */
+.logininput{
+    background-color: transparent;
     font-family: "Montserrat", sans-serif;
-    font-size: 20px;
-    font-weight: 500;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px;
+    width: 300px;
+    height: 40px;
+    box-sizing: border-box;
+    margin-top: 5px;
     margin-bottom: 15px;
+}
+
+/* Style the labels */
+label {
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.username, .loginusername, .loginpassword, .loginbottom, .loginbottom2{
+    background-color: transparent;
+}
+
+.password{
+    background-color: transparent;
+}
+
+
+/* Style the submit button */
+button {
+    font-family: "Montserrat", sans-serif;
+    background-color: lightgreen;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 16px;
+    width: 100px;
+    box-sizing: border-box;
     
 }
-.enter_div, input{
+
+/* Add some hover effects for the button */
+button:hover {
+    background-color: rgb(172, 238, 172);
+}
+
+p{
     font-family: "Montserrat", sans-serif;
-    width: 400px;
-    height: 50px;
-    border-radius: 10px;
-    border-color: transparent;
-    font-size: 18px;
+    font-size: 13px;
+    margin-bottom: 20px;
 }
-.enter_div, input:active{
-    border: none;
+.signuplink{
+    color: blue;
 }
-a{
-    text-decoration: underline;
-    color:darkcyan;
-    cursor: pointer;
-}
-.lbutton{
-    font-family: "Montserrat", sans-serif;
-    height: 60px;
-    width: 100px;
-    border: none;
-    border-radius: 15px;
-    background-color: lightgreen;
-    cursor: pointer;
-    font-size: 20px;
-    margin-bottom: -15px;
-
-}
-
-
-
-
-
-
-
-
-

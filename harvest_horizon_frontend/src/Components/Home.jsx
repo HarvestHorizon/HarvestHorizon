@@ -1,38 +1,42 @@
 import React from "react";
-
 import BoxList from './BoxList';
 import '../Styles/Home.css' ;
+import {useNavigate} from 'react-router-dom';
+
 const Home=() =>
 {
     const imageSrc="./images/Home.png" ;
     const text=" Cultivate   your     Farm   Potential";
-    const buttonText="CLICK HERE" ;
+    // const buttonText="CLICK HERE" ;
     const Img="./images/Agri.png";
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate('/User'); // Navigate to the next page
+      };
     return(
         <>
         <div className="image-container" >
             <img src={imageSrc} alt="Home" className="background-image" />
             <h5 className="text">{text}</h5>
-            <button className="styled-button">{buttonText}</button>
+            <button className="styled-button" onClick={handleClick}>CLICK HERE</button>
 
         </div>
-        <div className="image-container">
+               <div className="image-container">
             <img src={Img} alt="Farmer" className="Agri-container" />
-            <h4 className="text1">LEARN ABOUT THE AGRICULTURE</h4>
+            <h4 className="text1 text-danger">LEARN ABOUT THE AGRICULTURE</h4>
             <br></br>
             <br></br>
             <br></br>
-            <p className="phara">"Agriculture not only gives riches to a nation</p>
+            <p className="phara">"Agriculture not only gives riches to a nation
             <br></br>
-            <p className="phara"> nation ,but the only riches she </p>
+          nation ,but the only riches she
             <br></br>
-            <p className="phara">can call her own "</p>
+         can call her own "</p>
             
-            
-            <button className="styled-button">LEARN MORE</button>
+            {/* <button className="styled-button">LEARN MORE</button> */}
 
         </div>
-        <BoxList /> 
+             <BoxList /> 
         </>
        
     );

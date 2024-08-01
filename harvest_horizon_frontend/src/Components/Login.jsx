@@ -1,34 +1,52 @@
-import React from 'react'
+import React,{useState} from 'react'
 import '../Styles/Login.css'
+import {useNavigate} from 'react-router-dom';
+
 
 const Login = () => {
-  return (
-    <div class="bg"> 
-            <div class="sign_up">
-                 
-                <div class="email_div">
-                    <div class="enter_email"> 
-                        <p class="email_text">Username</p>
-                    </div>
-                    <input class="email_input" type="text" placeholder="enter your username"/>
-                </div>
+    const [username,setUsername] = useState('');
+    const [password,setPassword] = useState('');
+    const navigate = useNavigate();
+    const handleSubmit =(e)=>{
+        e.preventDefault();
+        console.log(`username: ${username} password: ${password}`);
+        setUsername('');
+        setPassword('');
+    };
+    const handleClick = () => {
+        navigate('/Signup'); // Navigate to the next page
+      };
 
-                <div class="email_div">
-                    <div class="enter_email"> 
-                        <p class="email_text">Password</p>
-                    </div>
-                    <input class="email_input" type="password" placeholder="enter your password"/>
+    return (
+        <div className='loginbody'>
+            <form className='loginbg'>
+                <div className='username'>
+                    <label className='loginusername'>Usename or Email </label>
+                    <input 
+                    className='logininput'
+                    value={username} 
+                    type = 'input'
+                    onChange ={(e) => setUsername(e.target.value)} 
+                    placeholder="enter your usename or email"
+                     required/>
                 </div>
+                <div className='password'>
+                    <label className='loginpassword'>Password : </label>
+                    <input
+                    className='logininput'
+                    value={password} 
+                    type = 'password'
+                    onChange ={(e) => setPassword(e.target.value)} 
+                    placeholder="enter your Password"
+                     required/>
+                </div>
+                <button onClick={handleSubmit} type='submit' >Submit</button>
+                <p className='loginbottom'>Don't you have an account ? <a className='signuplink' onClick={handleClick} href="">Signup</a>
+                </p>
                 
-                <button class="lbutton">
-                    Login
-                </button>
-
-                <p class="email_text">Don't you have an account ?<a target="_blank" href="signup.html">Sign_up</a></p>
-   
-            </div>
+            </form>
         </div>
-  )
+    )
 }
 
-export default Login
+export default Login;

@@ -3,14 +3,14 @@
       "id":1,
       "name":"CROPS",
       "description":" 'Crops' refer to cultivated plants or agricultural produce that are grown and harvested for food, feed, fiber, fuel, or other economic purposes. These plants are intentionally planted and managed by humans in fields, orchards, gardens, or other agricultural settings. Crops play a crucial role in providing sustenance for humans and livestock, as well as raw materials for industries such as textiles, biofuels, and pharmaceuticals.",
-      "backgroundColor":"Blue"
+      "backgroundColor":"#DFF9BA"
     },
     { 
       "id":2,
       "name":"FERTILIZERS" ,
       "description":"Fertilizers are substances applied to soil or plants to provide essential nutrients that promote growth and enhance productivity. They can be broadly categorized into two main types based on their origin and composition" ,
       "class-name" :"fertilizer" ,
-      "backgroundColor":"Yellow"
+      "backgroundColor":"#D4E9E2"
     },
     {
       "id":3,

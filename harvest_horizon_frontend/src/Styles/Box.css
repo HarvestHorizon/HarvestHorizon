@@ -55,7 +55,7 @@
     width:500px;
     height:300px;
     padding:20px;
-    background-color: azure;
+    background-color: rgb(97, 203, 203);
     display: flex;
     justify-content:space-around ;
     align-items: center;

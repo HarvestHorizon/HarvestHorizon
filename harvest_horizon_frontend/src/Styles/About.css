@@ -7,19 +7,39 @@
     line-height: 1.2;
 }
 .about1{
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 70px;
+    margin-bottom: 70px;
     background-color: #1E3932;
-    /* margin: 20px; */
     padding: 30px;
     display: block;
     text-align: left;
 }
 .pragaraphy{
-    padding: 10px;
-
-
+    padding: 20px;
+    color: white;
 }
 h3{
     padding: 10px;
 }
+
+p{
+    color: white;
+}
+
+/* .arr{
+    height: 30px;
+    width: 30px;
+    border-top: 5px solid blue;
+    border-left: 5px solid blue;
+    left: 27.5px;
+    top: 35px;
+    transform: rotate(135deg);
+    display:flex;
+    padding: 15px;
+    margin: 1135px;
+    position:absolute;
+    margin-right: 100px;
+    margin-top: 280px;
+} */
+
+

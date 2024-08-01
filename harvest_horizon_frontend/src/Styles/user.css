@@ -1,0 +1,68 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  *{
+      /* margin:0px;
+      padding:0px; */
+      box-sizing:border-box;
+      font-family: "Poppins", sans-serif;
+  }
+  
+  h4 {
+    text-align: center;
+    color: green;
+    margin-top: 20px;
+    /* background-color:#D4E9E2 ; */
+  }
+  
+  /* Container for the form elements */
+  .boxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px auto;
+    padding: 10px;
+    background-color:#D4E9E2;
+    width:100%;
+    max-width:100%;
+  }
+  
+  /* Style for paragraphs inside the form */
+  .boxes p {
+    margin: 10px 0 5px;
+    color: #555;
+    font-size: large;
+  }
+  
+  /* Style for dropdown menus */
+  .boxes select {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid black;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+  /* Style for the submit button */
+  .submit {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 20%;
+    box-sizing: border-box;
+  }
+  
+  .submit:hover {
+    background-color: #45a049;
+  }
+  
+  .submit:focus {
+    outline: none;
+  }
+  
+  
