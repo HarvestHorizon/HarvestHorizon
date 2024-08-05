@@ -3,8 +3,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 1150px;
-    margin: 0;
+    height: 100%;
+    margin: 100px;
 
 }
 
@@ -15,7 +15,7 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
     width: 350px;
-    height: 1000px;
+    height: 700px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,7 +72,7 @@ p{
     margin-bottom: 20px;
     background-color: transparent;
 }
-.genderdrop{
+/* .genderdrop{
     background-color: transparent;
     font-family: "Montserrat", sans-serif;
     border: 1px solid #ccc;
@@ -83,7 +83,7 @@ p{
     box-sizing: border-box;
     margin-top: 5px;
     margin-bottom: 15px;
-}
+} */
 a{
     background-color: transparent;
 }

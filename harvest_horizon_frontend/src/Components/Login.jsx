@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import '../Styles/Login.css'
 import {useNavigate} from 'react-router-dom';
-
+import { login } from '../Actions/login_actions';
 
 const Login = () => {
     const [username,setUsername] = useState('');
@@ -9,12 +9,20 @@ const Login = () => {
     const navigate = useNavigate();
     const handleSubmit =(e)=>{
         e.preventDefault();
-        console.log(`username: ${username} password: ${password}`);
+      
+        login(username, password);
         setUsername('');
         setPassword('');
+        
+        // console.log(`username: ${username} password: ${password}`);
+        
+// use username and password
+
+
     };
-    const handleClick = () => {
+    const handleClick = (e) => {
         navigate('/Signup'); // Navigate to the next page
+        e.preventDefault();
       };
 
     return (
@@ -40,7 +48,7 @@ const Login = () => {
                     placeholder="enter your Password"
                      required/>
                 </div>
-                <button onClick={handleSubmit} type='submit' >Submit</button>
+                <button onClick={handleSubmit}type='submit'>Submit</button>
                 <p className='loginbottom'>Don't you have an account ? <a className='signuplink' onClick={handleClick} href="">Signup</a>
                 </p>
                 

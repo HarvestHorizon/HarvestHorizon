@@ -1,33 +1,37 @@
 import React,{useState} from 'react'
 import '../Styles/Signup.css'
 import {useNavigate} from 'react-router-dom';
+import SignupAction from '../Actions/SignupAction';
 
 
 const Signup = () => {
     const [firstname,setFirstname] = useState('');
-    const [lastanme,setLastname] = useState('');
-    const [email,setEmail] = useState('');
+    const [lastname,setLastname] = useState('');
+    const [email_id,setEmail_id] = useState('');
     const [password,setPassword] = useState('');
     const [confirmpass,setConfirmpass] = useState('');
-    const [gender,setGender] = useState('');
-    const [country,setCountry] = useState('');
-    const [state,setState] = useState('');
-    const [district,setDistrict] = useState('');
+    // const [gender,setGender] = useState('');
+    const [phonenumber,setPhonenumber] = useState('');
+    // const [state,setState] = useState('');
+    // const [district,setDistrict] = useState('');
     const navigate = useNavigate();
-    const [pincode,setPincode] = useState('');
+    // const [pincode,setPincode] = useState('');
     const handleSubmit =(e)=>{
         e.preventDefault();
-        console.log(`username: ${firstname} password: ${password}`);
+        // console.log(`username: ${firstname} password: ${password}`);
+        SignupAction(firstname,lastname,email_id,password, confirmpass,phonenumber);
         setFirstname('');
         setLastname('');
-        setEmail('')
+        setEmail_id('')
         setPassword('');
         setConfirmpass('');
-        setGender('');
-        setCountry('');
-        setState('');
-        setDistrict('');
-        setPincode('');
+        setPhonenumber('');
+        // setGender('');
+        // setCountry('');
+        // setState('');
+        // setDistrict('');
+        // setPincode('');
+        
         
     };
     const handleClick = () => {
@@ -50,7 +54,7 @@ const Signup = () => {
                     <label className='signuplastname'>Lastname</label>
                     <input 
                     className='signupinput'
-                    value={lastanme} 
+                    value={lastname} 
                     type = 'input'
                     onChange ={(e) => setLastname(e.target.value)} 
                     placeholder="enter your lastname"
@@ -60,9 +64,9 @@ const Signup = () => {
                     <label className='signupemail'>Email</label>
                     <input 
                     className='signupinput'
-                    value={email} 
+                    value={email_id} 
                     type = 'input'
-                    onChange ={(e) => setEmail(e.target.value)} 
+                    onChange ={(e) => setEmail_id(e.target.value)} 
                     placeholder="enter your email"
                      required/>
                 </div>
@@ -87,7 +91,7 @@ const Signup = () => {
                      required/>
                 </div>
                 
-                <div className='password'>
+                {/* <div className='password'>
                     <label className='signuppassword'>Gender</label>
                     <select className='genderdrop' value={gender} 
                     type = 'password'
@@ -97,18 +101,18 @@ const Signup = () => {
                         <option>Female</option>
                         <option>Others</option>
                     </select>
-                </div>
+                </div> */}
                 <div className='password'>
-                    <label className='signupcountry'>Country</label>
+                    <label className='signupcountry'>Phone no</label>
                     <input 
                     className='signupinput'
-                    value={country} 
+                    value={phonenumber} 
                     type = 'password'
-                    onChange ={(e) => setCountry(e.target.value)} 
-                    placeholder="enter your Password"
+                    onChange ={(e) => setPhonenumber(e.target.value)} 
+                    placeholder="enter your Phonenumber"
                      required/>
                 </div>
-                <div className='password'>
+                {/* <div className='password'>
                     <label className='signupstate'>State</label>
                     <input 
                     className='signupinput'
@@ -137,8 +141,9 @@ const Signup = () => {
                     onChange ={(e) => setPincode(e.target.value)} 
                     placeholder="enter your Password"
                      required/>
-                </div>
-                <button onClick={handleSubmit} type='submit' >Submit</button>
+                </div> */}
+                <button onClick={handleSubmit}
+                    type='submit' >Submit</button>
                 <p>Already have an account ? <a className='loginlink' onClick={handleClick} href="">Login</a>
                 </p>
                 
@@ -147,4 +152,4 @@ const Signup = () => {
     )
 }
 
-export default Signup
+export default Signup;
