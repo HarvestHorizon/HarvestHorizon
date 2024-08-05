@@ -12,31 +12,33 @@ body{
     height: 100vh;
     background-color: white;
 }
-.footer{
+.mainfooter{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 150px;
+    width: 100%;
     flex-wrap: wrap;
     margin-top: auto;
     background-color: #1e3932;
-    padding: 60px 10%;
+    padding: 60px;
+    ul{
+        list-style: none;
+        margin: 5px;
+    
+    }
+    a{
+        color:whitesmoke;
+        text-decoration: none;
+        font-size: 12px;
+    
+    }
+    .kathir2 h4{
+        color:whitesmoke;
+    
+    }
+     .kathir1 h4{
+        color:whitesmoke;
+     }
+    
 }
-ul{
-    list-style: none;
-    margin: 5px;
-
-}
-a{
-    color:whitesmoke;
-    text-decoration: none;
-    font-size: 12px;
-
-}
-.kathir2 h4{
-    color:whitesmoke;
-
-}
- .kathir1 h4{
-    color:whitesmoke;
- }

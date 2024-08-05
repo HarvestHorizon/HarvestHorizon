@@ -6,11 +6,11 @@ const Header = () => {
   return (
     <>
    
-    {/* <div class="navbar"> */}
+    <div class="navbar">
         <div class="container">
                 
            <nav>
-           <img class="log" src="images/logo.jpg" />  
+           <img class="log" src="images/logo.jpg" alt='log1'/>  
             <div class="naving">
                 <a href="/">Home</a>
                 <a href="/about">About</a>
@@ -20,12 +20,12 @@ const Header = () => {
             </div>
             <div class="but1">
                 <a href="/Login">login</a>  
-                 {/* <img class="user" src="images/user.png" />  */}       
+                 <img class="user" src="images/user.png" alt='log2' />        
             </div>
            
            </nav>
         </div>
-    {/* </div> */}
+    </div>
     <div class="container2">
         <h1>HARVEST HORIZON</h1>
         <div class="but2">
