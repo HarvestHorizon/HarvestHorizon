@@ -1,5 +1,5 @@
-const Crop = async (username, password) => {
-    return fetch('http://localhost:8080/api/v1/user/login', {
+ const Crop = async () => {
+    return fetch('http://localhost:7051/api/v1/crop/crop', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -15,5 +15,4 @@ const Crop = async (username, password) => {
         });
 
 };
-
-export { Crop }
+export {Crop}

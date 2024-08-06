@@ -1,7 +1,12 @@
 import React from 'react'
 import '../Styles/Shop.css'
+import {useNavigate} from 'react-router-dom';
 
 const Shop = () => {
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate('/Crop'); // Navigate to the next page
+      };
   return (
     <>
      <div class="main_div">
@@ -10,13 +15,13 @@ const Shop = () => {
                 <div class="crop">
                     <img class="cropimg" src="Images/SEEDS.jpg" alt=""/>
                     <p>CROPS</p>
-                    <button class="buybutton">Buy</button>
+                    <button class="buybutton" onClick={handleClick}>Buy</button>
                 </div>
 
                 <div class="crop">
                     <img class="cropimg1" src="Images/FRETILIZERS.jpg" alt=""/>
                     <p>FERTILIZERS</p>
-                    <button class="buybutton">Buy</button>
+                    <button class="buybutton" >Buy</button>
                 </div>
 
 

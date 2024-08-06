@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Styles/User.css'
+import '../Styles/user.css'
 
 const user = () => {
   return (
@@ -9,7 +9,7 @@ const user = () => {
 <div className='boxes'>
 <p>Soil Type</p>
     <select className='boxes'>
-        <option>seclect</option>
+        <option>select</option>
         <option> Alluvial Soil</option>
         <option> Black Soil </option>
         <option>Red Soil</option>
@@ -23,7 +23,7 @@ const user = () => {
     <p>Seasson</p>
 
     <select className='boxes'>
-        <option>seclect</option>
+        <option>select</option>
         <option>Spring</option>
         <option>Summer</option>
         <option>Autumn</option>
@@ -32,11 +32,10 @@ const user = () => {
     </select>
     <p>Land size</p>
     <select className='boxes'>
-        <option>seclect</option>
-        <option>0-0.5</option>
-        <option> 0.5-1</option>
-        <option> 1-2 </option>
-        <option>2-above</option>
+    <option>select</option>
+        <option>small</option>
+        <option>medium</option>
+        <option>large</option>
 
     </select>
     <button className='submit'>SUBMIT</button>

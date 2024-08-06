@@ -1,5 +1,5 @@
 const SignupAction = async (firstname,lastname,email_id,password, confirm_password,phone_no) => {
-    return fetch('http://localhost:8080/api/v1/user/register', {
+    return fetch('http://localhost:7051/api/v1/user/register', {
         method: 'POST',
         body: JSON.stringify({
            firstname:firstname,

@@ -7,7 +7,7 @@ const Home=() =>
 {
     const imageSrc="./images/Home.png" ;
     const text=" Cultivate   your     Farm   Potential";
-    // const buttonText="CLICK HERE" ;
+    const buttonText="CLICK HERE" ;
     const Img="./images/Agri.png";
     const navigate = useNavigate();
     const handleClick = () => {
@@ -15,13 +15,14 @@ const Home=() =>
       };
     return(
         <>
+        <div className="homepage">
         <div className="image-container" >
             <img src={imageSrc} alt="Home" className="background-image" />
             <h5 className="text">{text}</h5>
             <button className="styled-button" onClick={handleClick}>CLICK HERE</button>
 
         </div>
-               <div className="image-container">
+        <div className="image-container">
             <img src={Img} alt="Farmer" className="Agri-container" />
             <h4 className="text1 text-danger">LEARN ABOUT THE AGRICULTURE</h4>
             <br></br>
@@ -33,10 +34,11 @@ const Home=() =>
             <br></br>
          can call her own "</p>
             
-            {/* <button className="styled-button">LEARN MORE</button> */}
+          
 
-        </div>
+        </div> 
              <BoxList /> 
+             </div>
         </>
        
     );

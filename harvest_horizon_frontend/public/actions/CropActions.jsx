@@ -1,10 +1,7 @@
-const login = async (username, password) => {
-    return fetch('http://localhost:7051/api/v1/user/login', {
-        method: 'POST',
-        body: JSON.stringify({
-            email_id: username,
-            password: password
-        }),
+export const  Crop = async () => {
+    return fetch('http://localhost:8080/api/v1/crops',
+        {
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json'
         }
@@ -19,5 +16,3 @@ const login = async (username, password) => {
         });
 
 };
-
-export { login }

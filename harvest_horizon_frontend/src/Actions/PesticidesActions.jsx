@@ -1,4 +1,4 @@
-const Pesticides = async (username, password) => {
+const Pesticides = async () => {
     return fetch('http://localhost:8080/api/v1/user/login', {
         method: 'GET',
         headers: {
