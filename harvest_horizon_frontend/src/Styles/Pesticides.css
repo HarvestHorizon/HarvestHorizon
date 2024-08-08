@@ -1,0 +1,85 @@
+.pesticidepage{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .pesticidesbody{
+    gap: 120px;
+    height: 250px;
+    /* width: 900px; */
+    border-radius: 30px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: transform 0.5s ease, box-shadow 0.5s;
+  }
+  .pesticidesbody:hover{
+    transform: scale(1.02);
+    box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.3),
+                10px 0 10px -5px(0, 0, 0, 0.9);
+  }
+  .pesticidesdiv{
+    background-color: white;
+    height: 175px;
+    width: 452px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* gap: 20px; */
+  }
+  .pesticidesbutton{
+    background-color: white;
+  }
+  .pesticidesname{
+    background-color: white;
+  }
+  .pesticidesname p{
+    font-weight: 700;
+  }
+  .buybutton, .cartbutton{
+    width: 150px;
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+    background-color: #43609C;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .buybutton{
+    margin-right: 40px;
+  }
+  .cartbutton{
+    height: 48px;
+  }
+  .buybutton:hover{
+    background-color: #748fc4;
+  }
+  .buybuttonn:active{
+    background-color: #43609C;
+  }
+  .cartbutton:hover{
+    background-color: #748fc4;
+  }
+  .cartbutton:active{
+    background-color: #43609C;
+  }
+  
+  
+  
+  .fertilizerimage1{
+    height: 200px;
+    width: 200px;
+    border-radius: 5px;
+    object-fit:fill;
+  }
+  
+    
+}

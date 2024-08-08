@@ -16,10 +16,12 @@ const Signup = () => {
     // const [district,setDistrict] = useState('');
     const navigate = useNavigate();
     // const [pincode,setPincode] = useState('');
-    const handleSubmit =(e)=>{
+    const handleSubmit = async (e)=>{
         e.preventDefault();
         // console.log(`username: ${firstname} password: ${password}`);
-        SignupAction(firstname,lastname,email_id,password, confirmpass,phonenumber);
+        const user = await SignupAction(firstname,lastname,email_id,password, confirmpass,phonenumber);
+        localStorage.setItem('user', JSON.stringify(user));
+
         setFirstname('');
         setLastname('');
         setEmail_id('')
@@ -32,6 +34,9 @@ const Signup = () => {
         // setDistrict('');
         // setPincode('');
         
+        setTimeout(() => {
+            window.location.href = "/";
+        }, 1000);
         
     };
     const handleClick = () => {
@@ -47,7 +52,7 @@ const Signup = () => {
                     value={firstname} 
                     type = 'input'
                     onChange ={(e) => setFirstname(e.target.value)} 
-                    placeholder="enter your firstname"
+                    placeholder="Enter your firstname"
                      required/>
                 </div>
                 <div className='password'>
@@ -57,7 +62,7 @@ const Signup = () => {
                     value={lastname} 
                     type = 'input'
                     onChange ={(e) => setLastname(e.target.value)} 
-                    placeholder="enter your lastname"
+                    placeholder="Enter your lastname"
                      required/>
                 </div>
                 <div className='password'>
@@ -67,7 +72,7 @@ const Signup = () => {
                     value={email_id} 
                     type = 'input'
                     onChange ={(e) => setEmail_id(e.target.value)} 
-                    placeholder="enter your email"
+                    placeholder="Enter your email"
                      required/>
                 </div>
                 <div className='password'>
@@ -75,9 +80,9 @@ const Signup = () => {
                     <input 
                     className='signupinput'
                     value={password} 
-                    type = 'input'
+                    type = 'password'
                     onChange ={(e) => setPassword(e.target.value)} 
-                    placeholder="enter your password"
+                    placeholder="Enter your password"
                      required/>
                 </div>
                 <div className='password'>
@@ -85,9 +90,9 @@ const Signup = () => {
                     <input 
                     className='signupinput'
                     value={confirmpass} 
-                    type = 'input'
+                    type = 'password'
                     onChange ={(e) => setConfirmpass(e.target.value)} 
-                    placeholder="confirm your Password"
+                    placeholder="Confirm your Password"
                      required/>
                 </div>
                 
@@ -103,13 +108,13 @@ const Signup = () => {
                     </select>
                 </div> */}
                 <div className='password'>
-                    <label className='signupcountry'>Phone no</label>
+                    <label className='signupcountry'>Phone number</label>
                     <input 
                     className='signupinput'
                     value={phonenumber} 
-                    type = 'password'
+                    type = 'text'
                     onChange ={(e) => setPhonenumber(e.target.value)} 
-                    placeholder="enter your Phonenumber"
+                    placeholder="Enter your Phonenumber"
                      required/>
                 </div>
                 {/* <div className='password'>

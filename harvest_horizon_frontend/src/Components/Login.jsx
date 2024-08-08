@@ -1,60 +1,80 @@
-import React,{useState} from 'react'
-import '../Styles/Login.css'
-import {useNavigate} from 'react-router-dom';
-import { login } from '../Actions/login_actions';
+import React, { useState } from 'react';
+import '../Styles/Login.css';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Login = () => {
-    const [username,setUsername] = useState('');
-    const [password,setPassword] = useState('');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState(null);
     const navigate = useNavigate();
-    const handleSubmit =(e)=>{
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-      
-        login(username, password);
+
+        try {
+            const response = await axios.post('http://localhost:7051/api/v1/user/login', {
+                email_id: username,
+                password: password
+            });
+
+            if (response.status === 202) {
+                console.log('Login successful:', response.data); // Debugging line
+                localStorage.setItem('user', JSON.stringify(response.data));
+                setTimeout(() => {
+                    // navigate('/'); // Redirect to Crop page
+                    window.location.href = "/";
+                }, 1000);
+            } else {
+                setError('Login failed. Please check your username and password.');
+            }
+        } catch (err) {
+            console.error('Login error:', err); // Debugging line
+            setError('invalid User. Please try again.');
+        }
+
         setUsername('');
         setPassword('');
-        
-        // console.log(`username: ${username} password: ${password}`);
-        
-// use username and password
-
-
     };
+
     const handleClick = (e) => {
-        navigate('/Signup'); // Navigate to the next page
         e.preventDefault();
-      };
+        navigate('/Signup'); // Navigate to the Signup page
+    };
 
     return (
         <div className='loginbody'>
-            <form className='loginbg'>
+            <form className='loginbg' onSubmit={handleSubmit}>
                 <div className='username'>
-                    <label className='loginusername'>Usename or Email </label>
-                    <input 
-                    className='logininput'
-                    value={username} 
-                    type = 'input'
-                    onChange ={(e) => setUsername(e.target.value)} 
-                    placeholder="enter your usename or email"
-                     required/>
+                    <label className='loginusername'>Username or Email</label>
+                    <input
+                        className='logininput'
+                        value={username}
+                        type='text'
+                        onChange={(e) => setUsername(e.target.value)}
+                        placeholder="Enter your username or email"
+                        required
+                    />
                 </div>
                 <div className='password'>
-                    <label className='loginpassword'>Password : </label>
+                    <label className='loginpassword'>Password</label>
                     <input
-                    className='logininput'
-                    value={password} 
-                    type = 'password'
-                    onChange ={(e) => setPassword(e.target.value)} 
-                    placeholder="enter your Password"
-                     required/>
+                        className='logininput'
+                        value={password}
+                        type='password'
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="Enter your password"
+                        required
+                    />
                 </div>
-                <button onClick={handleSubmit}type='submit'>Submit</button>
-                <p className='loginbottom'>Don't you have an account ? <a className='signuplink' onClick={handleClick} href="">Signup</a>
+                <button type='submit'>Submit</button>
+                <p className='loginbottom'>
+                    Don't you have an account? <a className='signuplink' href="" onClick={handleClick}>Signup</a>
                 </p>
-                
+                {error && <p className='loginerror'>{error}</p>}
             </form>
         </div>
-    )
-}
+    );
+};
 
 export default Login;

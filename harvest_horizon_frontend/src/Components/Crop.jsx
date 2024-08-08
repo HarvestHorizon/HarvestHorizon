@@ -1,207 +1,97 @@
-// import React from 'react'
-// import '../Styles/Crop.css'
-// // import image1 from '../Images/brinjal seed.jpg'
+
+
+
+
+// import React, { useState, useEffect } from 'react';
+// import { useParams } from 'react-router-dom';
+// import axios from 'axios'; // Or use 'fetch' if you prefer
+// import "../Styles/Crop.css"
 
 // const Crop = () => {
-//     return (
-//         <div className="cropspage">
-//             <div className='cropbody'>
-//                 <img className='cropimage1' src="images/brinjal seed.jpg" aly="brinjal"></img>
-//                 <div className='cropdiv'>
-//                     <div className='cropname'>
-//                         <p className='nameofcrop'>Name : Crop 1</p>
-//                         <p className='cropsoiltype'>Soil Type: Well-Draied loamy Soil</p>
-//                         <p className='cropseason'>Season : Warm</p>
-//                     </div >
-                        
-//                     <div className='cropbuttons'>
-//                         <button className='cropfertbut'>Fertilizers</button>
-//                         <button className='croppestbut'>Pesticides</button>
-//                     </div>
-//                 </div>
-//             </div>
+//   const { soilType, landSize, season } = useParams();
+//  const [crops, setCrops] = useState([]);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState(null);
 
-//             <div className='cropbody'>
-//                 <img className='cropimage1' src="images/brinjal seed.jpg" alt="brinjal"></img>
-//                 <div className='cropdiv'>
-//                     <div className='cropname'>
-//                         <p>Name : Crop 1</p>
-//                         <p>Soil Type: Well-Draied loamy Soil</p>
-//                         <p>Season : Warm</p>
-//                     </div >
-                        
-//                     <div className='cropbuttons'>
-//                         <button className='cropfertbut'>Fertilizers</button>
-//                         <button className='croppestbut'>Pesticides</button>
-//                     </div>
-//                 </div>
-//             </div>
+//   // Fetch crops data from the backend
+//   useEffect(() => {
+//     const fetchCrops = async () => {
+//       try {
+//         const response = await axios.get('http://localhost:7051/api/v1/crop/recommendations'); // Replace with your API endpoint
+//         Params: { soilType, landSize, season } 
+//         setCrops(response.data);
+//         setLoading(false);
+//       } catch (err) {
+//         setError(err);
+//         setLoading(false);
+//       }
+//     };
 
-//             <div className='cropbody'>
-//                 <img className='cropimage1' src="images/brinjal seed.jpg" alt="brinjal"></img>
-//                 <div className='cropdiv'>
-//                     <div className='cropname'>
-//                         <p>Name : Crop 1</p>
-//                         <p>Soil Type: Well-Draied loamy Soil</p>
-//                         <p>Season : Warm</p>
-//                     </div >
-                        
-//                     <div className='cropbuttons'>
-//                         <button className='cropfertbut'>Fertilizers</button>
-//                         <button className='croppestbut'>Pesticides</button>
-//                     </div>
-//                 </div>
-//             </div>
+//     fetchCrops();
+//     [soilType, landSize, season];
 
-//             <div className='cropbody'>
-//                 <img className='cropimage1' src="images/brinjal seed.jpg" alt="brinjal"></img>
-//                 <div className='cropdiv'>
-//                     <div className='cropname'>
-//                         <p>Name : Crop 1</p>
-//                         <p>Soil Type: Well-Draied loamy Soil</p>
-//                         <p>Season : Warm</p>
-//                     </div >
-                        
-//                     <div className='cropbuttons'>
-//                         <button className='cropfertbut'>Fertilizers</button>
-//                         <button className='croppestbut'>Pesticides</button>
-//                     </div>
-//                 </div>
-//             </div>
+//   }, []);
 
-//             <div className='cropbody'>
-//                 <img className='cropimage1' src="images/brinjal seed.jpg" alt="brinjal"></img>
-//                 <div className='cropdiv'>
-//                     <div className='cropname'>
-//                         <p>Name : Crop 1</p>
-//                         <p>Soil Type: Well-Draied loamy Soil</p>
-//                         <p>Season : Warm</p>
-//                     </div >
-                        
-//                     <div className='cropbuttons'>
-//                         <button className='cropfertbut'>Fertilizers</button>
-//                         <button className='croppestbut'>Pesticides</button>
-//                     </div>
-//                 </div>
-//             </div>
+//   if (loading) return <p>Loading...</p>;
+//   if (error) return <p>Error: {error.message}</p>;
 
-//             <div className='cropbody'>
-//                 <img className='cropimage1' src="images/brinjal seed.jpg" alt="brinjal"></img>
-//                 <div className='cropdiv'>
-//                     <div className='cropname'>
-//                         <p>Name : Crop 1</p>
-//                         <p>Soil Type: Well-Draied loamy Soil</p>
-//                         <p>Season : Warm</p>
-//                     </div >
-                        
-//                     <div className='cropbuttons'>
-//                         <button className='cropfertbut'>Fertilizers</button>
-//                         <button className='croppestbut'>Pesticides</button>
-//                     </div>
-//                 </div>
+//   return (
+//     <div className="cropspage">
+//       {crops.map((crop) => (
+//         <div className='cropbody' key={crop.id}> {/* Assuming each crop has a unique 'id' */}
+//           <img className='cropimage1' src={"images/brinjal seed.jpg"} alt={crop.name} />
+//           <div className='cropdiv'>
+//             <div className='cropname'>
+//               <p className='nameofcrop'>Name: {crop.name}</p>
+//               <p className='cropsoiltype'>Soil Type: {crop.soilType}</p>
+//               <p className='cropseason'>Season: {crop.season}</p>
 //             </div>
-
-//             <div className='cropbody'>
-//                 <img className='cropimage1' src="images/brinjal seed.jpg" alt="brinjal"></img>
-//                 <div className='cropdiv'>
-//                     <div className='cropname'>
-//                         <p>Name : Crop 1</p>
-//                         <p>Soil Type: Well-Draied loamy Soil</p>
-//                         <p>Season : Warm</p>
-//                     </div >
-                        
-//                     <div className='cropbuttons'>
-//                         <button className='cropfertbut'>Fertilizers</button>
-//                         <button className='croppestbut'>Pesticides</button>
-//                     </div>
-//                 </div>
+//             <div className='cropbuttons'>
+//               <button className='cropfertbut'>Fertilizers</button>
+//               <button className='croppestbut'>Pesticides</button>
 //             </div>
-
-//             <div className='cropbody'>
-//                 <img className='cropimage1' src="images/brinjal seed.jpg" alt="brinjal"></img>
-//                 <div className='cropdiv'>
-//                     <div className='cropname'>
-//                         <p>Name : Crop 1</p>
-//                         <p>Soil Type: Well-Draied loamy Soil</p>
-//                         <p>Season : Warm</p>
-//                     </div >
-                        
-//                     <div className='cropbuttons'>
-//                         <button className='cropfertbut'>Fertilizers</button>
-//                         <button className='croppestbut'>Pesticides</button>
-//                     </div>
-//                 </div>
-//             </div>
-
-//             <div className='cropbody'>
-//                 <img className='cropimage1' src="images/brinjal seed.jpg" alt="brinjal"></img>
-//                 <div className='cropdiv'>
-//                     <div className='cropname'>
-//                         <p>Name : Crop 1</p>
-//                         <p>Soil Type: Well-Draied loamy Soil</p>
-//                         <p>Season : Warm</p>
-//                     </div >
-                        
-//                     <div className='cropbuttons'>
-//                         <button className='cropfertbut'>Fertilizers</button>
-//                         <button className='croppestbut'>Pesticides</button>
-//                     </div>
-//                 </div>
-//             </div>
-
-//             <div className='cropbody'>
-//                 <img className='cropimage1' src="images/brinjal seed.jpg" alt="brinjal"></img>
-//                 <div className='cropdiv'>
-//                     <div className='cropname'>
-//                         <p>Name : Crop 1</p>
-//                         <p>Soil Type: Well-Draied loamy Soil</p>
-//                         <p>Season : Warm</p>
-//                     </div >
-                        
-//                     <div className='cropbuttons'>
-//                         <button className='cropfertbut'>Fertilizers</button>
-//                         <button className='croppestbut'>Pesticides</button>
-//                     </div>
-//                 </div>
-//             </div>
-//             <div className='cropbody'>
-//                 <img className='cropimage1' src="images/brinjal seed.jpg" alt="brinjal"></img>
-//                 <div className='cropdiv'>
-//                     <div className='cropname'>
-//                         <p className='nameofcrop'>Name : Crop 1</p>
-//                         <p className='cropsoiltype'>Soil Type: Well-Draied loamy Soil</p>
-//                         <p className='cropseason'>Season : Warm</p>
-//                     </div >
-                        
-//                     <div className='cropbuttons'>
-//                         <button className='cropfertbut'>Fertilizers</button>
-//                         <button className='croppestbut'>Pesticides</button>
-//                     </div>
-//                 </div>
-//             </div>
-            
+//           </div>
 //         </div>
-//     )
-// }
+//       ))}
+//     </div>
+//   );
+// };
 
-// export default Crop
 
+// export default Crop;
 
 
 import React, { useState, useEffect } from 'react';
+import { useNavigate, useNavigation, useParams, useSearchParams } from 'react-router-dom';
 import axios from 'axios'; // Or use 'fetch' if you prefer
-import "../Styles/Crop.css"
+import "../Styles/Crop.css";
+// import { useNavigate } from 'react-router-dom';
+
+// function Crop() {
+//   let history = useHistory();
+// }
 
 const Crop = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [crops, setCrops] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  let navigate = useNavigate();
 
-  // Fetch crops data from the backend
+
+  const navigateToFertilizers = (cropId) => {
+    navigate('/Fertilizers/'+cropId);
+  }
+
+  const navigateToPesticides = (cropId) => {
+    navigate('/Pesticides/'+cropId);
+  }
+
+  
   useEffect(() => {
     const fetchCrops = async () => {
       try {
-        const response = await axios.get('http://localhost:7051/api/v1/crop/crop'); // Replace with your API endpoint
+        const response = await axios.get('http://localhost:7051/api/v1/crop/recommendations'+ '/'+searchParams.get('land')+'/'+ searchParams.get('season')+'/'+ searchParams.get('soil') );
         setCrops(response.data);
         setLoading(false);
       } catch (err) {
@@ -219,18 +109,19 @@ const Crop = () => {
   return (
     <div className="cropspage">
       {crops.map((crop) => (
-        <div className='cropbody' key={crop.id}> {/* Assuming each crop has a unique 'id' */}
-          <img className='cropimage1' src={"images/brinjal seed.jpg"} alt={crop.name} />
+        <div className='cropbody' key={crop.cropmodel.id}> {/* Assuming each crop has a unique 'id' */}
+          <img className='cropimage1' src={"images/brinjal seed.jpg"} alt={crop.cropmodel.name} />
           <div className='cropdiv'>
             <div className='cropname'>
-              <p className='nameofcrop'>Name: {crop.name}</p>
-              <p className='cropsoiltype'>Soil Type: {crop.soilType}</p>
-              <p className='cropseason'>Season: {crop.season}</p>
+              <p className='nameofcrop'>Name: {crop.cropmodel.name}</p>
+              <p className='cropsoiltype'>Soil Type: {crop.cropmodel.soilType}</p>
+              <p className='cropseason'>Season: {crop.cropmodel.season}</p>
             </div>
             <div className='cropbuttons'>
-              <button className='cropfertbut'>Fertilizers</button>
-              <button className='croppestbut'>Pesticides</button>
-            </div>
+              <button onClick={() => navigateToFertilizers(crop.cropmodel.id)} className='cropfertbut'>Fertilizers</button>
+              <button onClick={() => navigateToPesticides(crop.cropmodel.id)} className='croppestbut'>Pesticides</button>
+               <button className='buybuttoncrop'>buy</button>
+               </div>
           </div>
         </div>
       ))}
@@ -238,30 +129,4 @@ const Crop = () => {
   );
 };
 
-
 export default Crop;
-// import React from 'react'
-// import "../Styles/Crop.css"
-
-// const Crop = ({crop}) => {
-//   return (
-//     <>
-// <div>
-//       <img className='cropimage1' src="images/brinjal seed.jpg" alt="brinjal"></img>
-// //                     <div className='cropname'>
-// //                         <p>Name : Crop 1</p>
-// //                         <p>Soil Type: Well-Draied loamy Soil</p>
-// //                         <p>Season : Warm</p>
-// //                     </div >
-                        
-// //                     <div className='cropbuttons'>
-// //                         <button className='cropfertbut'>Fertilizers</button>
-// //                         <button className='croppestbut'>Pesticides</button>
-// //                     </div>  
-// </div>  
-
-//       </>
-//   )
-// }
-
-// export default Crop

@@ -14,8 +14,11 @@
     display: block;
     text-align: left;
 }
-.pragaraphy{
+.pharagraphy{
     padding: 20px;
+    color: white;
+}
+.pharagraphy p{
     color: white;
 }
 h3{

@@ -5,7 +5,7 @@ import {useNavigate} from 'react-router-dom';
 const Shop = () => {
     const navigate = useNavigate();
     const handleClick = () => {
-        navigate('/Crop'); // Navigate to the next page
+        navigate('/Cropbuy'); // Navigate to the next page
       };
   return (
     <>

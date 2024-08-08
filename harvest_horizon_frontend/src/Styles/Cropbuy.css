@@ -1,4 +1,4 @@
-.cropspage{
+.cropsbuypage{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,11 +78,10 @@
         border-radius: 5px;
         object-fit:fill;
     }
-    .buybuttoncrop{
+    .cropbuybutton{
         background-color:#43609C ;
-        
     }
-    .buybuttoncrop:hover{
+    .cropbuybutton:hover{
         background-color: #748fc4;
 
     }

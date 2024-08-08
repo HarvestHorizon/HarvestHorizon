@@ -1,5 +1,6 @@
 
-.image-container{
+
+  .image-container{
   position:relative ;
   width:100%;
   max-width:1200px;
@@ -10,7 +11,7 @@
 
 }
 
-.homepage{}
+
 
 .Agri-container
 {
@@ -113,4 +114,5 @@ p{
    color: black;
    font-size: 30px;
 }
+
 

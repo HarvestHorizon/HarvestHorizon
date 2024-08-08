@@ -1,49 +1,53 @@
 import React from 'react'
 import '../Styles/user.css'
+import {useNavigate} from 'react-router-dom';
 
-const user = () => {
+const User = () => {
+  const navigate = useNavigate();
+  
   return (
 <>
 
-<h4>FILL THE LAND AND GIVE SUBMIT</h4>
-<div className='boxes'>
-<p>Soil Type</p>
-    <select className='boxes'>
-        <option>select</option>
-        <option> Alluvial Soil</option>
-        <option> Black Soil </option>
-        <option>Red Soil</option>
-        <option>Laterite Soil</option>
-        <option>Desert Soil</option>
-        <option>Mountain Soil</option>
-        <option>Saline</option>
-        <option>Peaty Soil</option>
+  <h4>FILL THE LAND AND GIVE SUBMIT</h4>
+  <form action='/Crop' method='GET'>
+  <div className='boxes'>
+  <p>Soil Type</p>
+      <select name="soil" className='boxes'>
+          <option>ALLUVIAL</option>
+          <option> BLACK</option>
+          <option>SANDY_LOAM</option>
+          <option>LOAM</option>
+          <option>LATERITE</option>
+          <option>ARID</option>
+          <option>SALTY</option>
+          
 
-    </select>
-    <p>Seasson</p>
+      </select>
+      <p>Season</p>
 
-    <select className='boxes'>
-        <option>select</option>
-        <option>Spring</option>
-        <option>Summer</option>
-        <option>Autumn</option>
-        <option>Winter</option>
+      <select name="season" className='boxes'>
+         
+          <option>SUMMER</option>
+          <option>WINTER</option>
+          <option>RAINY</option>
+          <option>SPRING</option>
 
-    </select>
-    <p>Land size</p>
-    <select className='boxes'>
-    <option>select</option>
-        <option>small</option>
-        <option>medium</option>
-        <option>large</option>
+      </select>
+      <p>Land size</p>
+      <select name="land" className='boxes'>
+      
+          <option>SMALL</option>
+          <option>MEDIUM</option>
+          <option>LARGE</option>
 
-    </select>
-    <button className='submit'>SUBMIT</button>
-    </div>
+      </select>
+      <button type className='submit'>SUBMIT</button>
+      </div>
+      </form>
 
 
-    </>
+</>
   )
 }
 
-export default user
+export default User
